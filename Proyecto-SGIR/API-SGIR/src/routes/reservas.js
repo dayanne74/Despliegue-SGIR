@@ -1,6 +1,6 @@
 import express from 'express';
 import reservaSchema from '../models/reserva.js';
-import Usuario from '../models/Usuario.js'; // Añade esta importación
+import Usuario from '../models/usuario.js'; // Añade esta importación
 import Hotel from '../models/hotel.js';    // Añade estas importaciones
 import Paquete from '../models/paquete.js';
 import Excursion from '../models/excursion.js';
