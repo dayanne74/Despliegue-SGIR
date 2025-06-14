@@ -2,7 +2,7 @@ import MUIDataTable from 'mui-datatables';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-export const Actividad = () => {
+ const Actividad = () => {
     const [actividades, setActividades] = useState([]);
     const [error, setError] = useState(null);
 
@@ -99,3 +99,4 @@ export const Actividad = () => {
         </div>
     );
 };
+export default Actividad;

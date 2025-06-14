@@ -32,7 +32,7 @@ import AccessDenied from './paginas/AccesoDenegado/AccesoDenegado.jsx';
 
 // Rutas protegidas solo para Admin
 import AdminPage from './paginas/dashboard/AdminPage.jsx';
-import Actividad from '../../../../../../actividad/actividad/React/src/Components/TablaActividad.jsx';
+import Actividad from './paginas/cruds/TablaActividad.jsx';
 import ClientesCRUD from './componentes/clientesCRUD';
 import PaquetePage from './paginas/paquete/PaquetePage';
 import Excursiones from './paginas/excursiones/Excursiones';
