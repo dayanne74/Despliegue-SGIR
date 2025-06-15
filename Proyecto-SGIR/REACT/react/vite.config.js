@@ -25,4 +25,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react-icons/fa', 'react-icons/md','axios'],
   },
+  rollupOptions: {
+      external: ['fs', 'path', 'os'], // por ejemplo 'fs', 'path', 'os', etc.
+    }
 });
