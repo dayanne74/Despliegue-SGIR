@@ -1,7 +1,7 @@
 {
   "build": {
     "command": "npm install --legacy-peer-deps && npm run build",
-    "cwd": "REACT/react",
-    "outputDirectory": "REACT/react/dist"
+    "cwd": "Proyecto-SGIR/REACT/react",
+    "outputDirectory": "Proyecto-SGIR/REACT/react/dist"
   }
 }

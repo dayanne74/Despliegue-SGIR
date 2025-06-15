@@ -22,4 +22,7 @@ export default defineConfig({
     sourcemap: true,
     
   },
+  optimizeDeps: {
+    include: ['react-icons/fa', 'react-icons/md','axios'],
+  },
 });
