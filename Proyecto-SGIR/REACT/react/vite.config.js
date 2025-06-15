@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -18,19 +19,33 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      onwarn(warning, warn) {
-        console.warn('⚠️ Rollup warning:', warning);
-        warn(warning); // importante para no suprimir el warning real
-      },
-    }
-    
-  },
-  optimizeDeps: {
-    include: ['react-icons/fa', 'react-icons/md','axios'],
-  },
-  rollupOptions: {
-      external: ['fs', 'path', 'os','react-icons','axios',], // por ejemplo 'fs', 'path', 'os', etc.
+    commonjsOptions: {
+      transformMixedEsModules: true,
     },
-    logLevel: 'info',
+    rollupOptions: {
+      external: [],
+      onwarn(warning, warn) {
+        // Ignora advertencias por módulos externos mal detectados
+        if (
+          warning.code === 'UNRESOLVED_IMPORT' ||
+          warning.message.includes('externalized')
+        ) {
+          console.warn('⚠️ Módulo no resuelto, pero se continúa:', warning.source)
+          return
+        }
+        warn(warning)
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      // Esto previene errores comunes con dependencias de Node
+      fs: false,
+      path: false,
+      os: false,
+      crypto: false,
+      stream: false,
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 });
