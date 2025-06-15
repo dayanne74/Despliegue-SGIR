@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.17.1",
     "@mui/material": "^5.17.1",
+    "axios": "^1.10.0",
     "bootstrap": "^5.3.3",
     "joi": "^17.13.3",
     "lucide-react": "^0.511.0",
@@ -34,6 +35,11 @@
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.12.0",
     "vite": "^6.0.1"
+  },
+  "build": {
+    "command": "npm install --legacy-peer-deps && npm run build",
+    "cwd": "Proyecto-SGIR/REACT/react",
+    "outputDirectory": "Proyecto-SGIR/REACT/react/dist"
   },
   "proxy": "http://localhost:5000"
 }
