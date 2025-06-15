@@ -18,14 +18,19 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
-    sourcemap: true,
+    rollupOptions: {
+      onwarn(warning, warn) {
+        console.warn('⚠️ Rollup warning:', warning);
+        warn(warning); // importante para no suprimir el warning real
+      },
+    }
     
   },
   optimizeDeps: {
     include: ['react-icons/fa', 'react-icons/md','axios'],
   },
   rollupOptions: {
-      external: ['fs', 'path', 'os'], // por ejemplo 'fs', 'path', 'os', etc.
-    }
+      external: ['fs', 'path', 'os','react-icons','axios',], // por ejemplo 'fs', 'path', 'os', etc.
+    },
+    logLevel: 'info',
 });
