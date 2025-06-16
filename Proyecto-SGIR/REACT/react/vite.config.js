@@ -23,7 +23,7 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     rollupOptions: {
-      external: ['react-icons'],
+      external: ['react-icons/fa', 'react-icons'],
       onwarn(warning, warn) {
         // Ignora advertencias por módulos externos mal detectados
         if (
